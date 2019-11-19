@@ -4,7 +4,8 @@ include 'database/QueryBuilder.php';
 include 'database/Connection.php';
 
 
-$pdo = connectToDb();
+$connnection = new Connection;
+$pdo = $connnection->make();
 
 $db = new QueryBuilder($pdo);
 $posts = $db->getAll();
