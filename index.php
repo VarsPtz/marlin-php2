@@ -1,7 +1,16 @@
 <?php
 include 'functions.php';
+include 'database/QueryBuilder.php';
+include 'database/Connection.php';
 
-$posts = getAllPosts();
+
+$pdo = connectToDb();
+
+$db = new QueryBuilder($pdo);
+$posts = $db->getAll();
+
+//$posts = getAllPosts($pdo);
+//$users = getAllusers($pdo);
 
 //4. Вывести через foreach
 include 'index.view.php';
