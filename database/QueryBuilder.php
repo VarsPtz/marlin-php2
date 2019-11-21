@@ -9,18 +9,13 @@ class QueryBuilder {
         $this->pdo = $pdo;
     }
 
-    function getAll() {
-//        dd($this->pdo);
+    public function getAll($table) {
 
-        //2. Выполнить запрос
-        $sql = 'SELECT * FROM posts';
+        $sql = "SELECT * FROM {$table}";
         $statement = $this->pdo->prepare($sql);
         $statement->execute();
 
-        //3. Получить ассоциативный массив -> $posts
-        $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-        return $posts;
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
 }
