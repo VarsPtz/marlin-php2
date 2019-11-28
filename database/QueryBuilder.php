@@ -20,7 +20,7 @@ class QueryBuilder {
 
     public function getOne ($table, $id)
     {
-        $sql = "SELECT * FROM posts WHERE id=:id";
+        $sql = "SELECT * FROM {$table} WHERE id=:id";
         $statement = $this->pdo->prepare($sql);
         $statement->execute([
             'id' => $id
@@ -55,9 +55,18 @@ class QueryBuilder {
 
         $sql = "UPDATE {$table} SET {$keys} WHERE id=:id";
         $statement = $this->pdo->prepare($sql);
-        $statement->bindValue(':id', $id);
+//        $statement->bindValue(':id', $id);
         $statement->execute($data);
 
+    }
+
+    public function delete($table, $id)
+    {
+        $sql = "DELETE FROM {$table} WHERE id=:id";
+        $statement = $this->pdo->prepare($sql);
+        $statement->execute([
+            'id' => $id
+        ]);
     }
 
 }
