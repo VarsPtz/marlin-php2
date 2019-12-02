@@ -56,7 +56,7 @@ class QueryBuilder {
         $sql = "UPDATE {$table} SET {$keys} WHERE id=:id";
         $statement = $this->pdo->prepare($sql);
 //        $statement->bindValue(':id', $id);
-        $statement->execute($data);
+        $statewwment->execute($data);
 
     }
 
