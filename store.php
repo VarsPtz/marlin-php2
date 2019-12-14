@@ -1,5 +1,5 @@
 <?php
-include 'functions.php';
+//include 'functions.php';
 $db = include 'database/start.php';
 
 $db->create('posts', [
@@ -7,5 +7,5 @@ $db->create('posts', [
 
 ]);
 
-header('Location: /index.php');
+header('Location: /');
 ?>

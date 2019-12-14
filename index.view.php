@@ -28,7 +28,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <a href="#" class="btn btn-success">Add Post</a>
+            <a href="/create.php" class="btn btn-success">Add Post</a>
             <table class="table">
                 <thead>
                 <tr>
@@ -42,6 +42,7 @@
                 <tr>
                     <th scope="row"><?php echo $post['id'];?></th>
                     <td><a href="/show.php?id=<?php echo $post['id'];?>"><?php echo $post['title'];?></a></td>
+<!--                    <td><a href="/show">--><?php //echo $post['title'];?><!--</a></td>-->
                     <td>
                         <a href="/edit.php?id=<?php echo $post['id'];?>" class="btn btn-warning">Edit</a>
                         <a href="/delete.php?id=<?php echo $post['id'];?>" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
